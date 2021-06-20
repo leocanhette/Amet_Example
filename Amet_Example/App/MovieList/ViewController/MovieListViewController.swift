@@ -13,10 +13,16 @@ final class MovieListViewController: UIViewController {
     // MARK: Constants and Variables
     private let movieSearchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
+        // searchBar.delegate = self
         searchBar.placeholder = "Pesquise pelo titulo."
         return searchBar
     }()
-    private let movieCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private let movieCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        // collectionView.isHidden = true
+        return collectionView
+    }()
+    private lazy var dataSource = MovieListDataSource(collectionView: movieCollectionView)
     
     // MARK: -
     // MARK: Life cycle
@@ -24,6 +30,10 @@ final class MovieListViewController: UIViewController {
         super.loadView()
         setupView()
         setupLayout()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource.setup()
     }
     
 }
@@ -47,6 +57,6 @@ extension MovieListViewController {
     }
     private func setupLayout() {
         view.backgroundColor = .white
-        movieCollectionView.backgroundColor = .gray
+        movieCollectionView.backgroundColor = .white
     }
 }
