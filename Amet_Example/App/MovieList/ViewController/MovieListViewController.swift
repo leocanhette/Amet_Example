@@ -25,7 +25,7 @@ final class MovieListViewController: UIViewController {
     private lazy var dataSource = MovieListDataSource(collectionView: movieCollectionView)
     
     // MARK: -
-    // MARK: Life cycle
+    // MARK: Life Cycle
     override func loadView() {
         super.loadView()
         setupView()
@@ -57,6 +57,6 @@ extension MovieListViewController {
     }
     private func setupLayout() {
         view.backgroundColor = .white
-        movieCollectionView.backgroundColor = .white
+        movieCollectionView.backgroundColor = .clear
     }
 }
