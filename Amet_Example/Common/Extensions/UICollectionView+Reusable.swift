@@ -1,0 +1,20 @@
+//
+//  UICollectionView+Reusable.swift
+//  Amet_Example
+//
+//  Created by Leo Canhette on 20/06/21.
+//
+
+import UIKit
+
+extension UICollectionView {
+    func registerReusableCell<T: UICollectionViewCell>(_: T.Type) where T: Reusable {
+        self.register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+    func dequeueReusableCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T where T: Reusable {
+        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(T.reuseIdentifier)")
+        }
+        return cell
+    }
+}

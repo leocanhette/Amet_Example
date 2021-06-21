@@ -24,6 +24,7 @@ final class MovieListDataSource: NSObject {
         
         super.init()
         
+        registerCells()
         setupCollectionView()
     }
 }
@@ -31,10 +32,13 @@ final class MovieListDataSource: NSObject {
 extension MovieListDataSource {
     // MARK: -
     // MARK: Private Functions
+    private func registerCells() {
+        collectionView?.registerReusableCell(MovieCollectionViewCell.self)
+    }
     private func setupCollectionView() {
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellID")
         collectionView?.showsVerticalScrollIndicator = false
         collectionView?.bounces = false
+        
         collectionView?.dataSource = self
         collectionView?.delegate = self
     }
@@ -50,8 +54,7 @@ extension MovieListDataSource: UICollectionViewDataSource {
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellID", for: indexPath)
-        cell.backgroundColor = .red
+        let cell: MovieCollectionViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
         return cell
     }
 }

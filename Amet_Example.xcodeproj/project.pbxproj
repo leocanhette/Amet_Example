@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3AB42FFD58E21C6281CE89F7 /* Pods_Amet_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C00E701ED4D5F251369636C /* Pods_Amet_Example.framework */; };
+		B38E769B267FD94700B4E248 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E769A267FD94700B4E248 /* MovieCollectionViewCell.swift */; };
+		B38E769D267FD99600B4E248 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E769C267FD99600B4E248 /* Reusable.swift */; };
+		B38E769F267FDA2100B4E248 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E769E267FDA2100B4E248 /* UICollectionView+Reusable.swift */; };
 		B3CBF90D267F40A8000A0597 /* MovieListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBF90C267F40A8000A0597 /* MovieListDataSource.swift */; };
 		B3EBE353267EA7D900DDFD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EBE352267EA7D900DDFD29 /* AppDelegate.swift */; };
 		B3EBE357267EA7D900DDFD29 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EBE356267EA7D900DDFD29 /* MovieListViewController.swift */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		4FD30A14286ED43B9CA0D90F /* Pods-Amet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amet_Example.debug.xcconfig"; path = "Target Support Files/Pods-Amet_Example/Pods-Amet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5C00E701ED4D5F251369636C /* Pods_Amet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B38E769A267FD94700B4E248 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		B38E769C267FD99600B4E248 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		B38E769E267FDA2100B4E248 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		B3CBF90C267F40A8000A0597 /* MovieListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDataSource.swift; sourceTree = "<group>"; };
 		B3EBE34F267EA7D900DDFD29 /* Amet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EBE352267EA7D900DDFD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,22 @@
 				BBFF36DD4F9414D94C19C383 /* Pods-Amet_Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B38E7698267FD92B00B4E248 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B38E7699267FD92F00B4E248 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B38E7699267FD92F00B4E248 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B38E769A267FD94700B4E248 /* MovieCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B3CBF90B267F4063000A0597 /* DataProvider */ = {
@@ -100,6 +122,7 @@
 		B3EBE366267EA7EE00DDFD29 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				B38E7698267FD92B00B4E248 /* View */,
 				B3CBF90B267F4063000A0597 /* DataProvider */,
 				B3EBE368267EA88B00DDFD29 /* ViewController */,
 			);
@@ -143,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				B3EBE36C267EB15800DDFD29 /* UIView+Constraints.swift */,
+				B38E769C267FD99600B4E248 /* Reusable.swift */,
+				B38E769E267FDA2100B4E248 /* UICollectionView+Reusable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,9 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38E769D267FD99600B4E248 /* Reusable.swift in Sources */,
 				B3EBE36D267EB15800DDFD29 /* UIView+Constraints.swift in Sources */,
 				B3EBE357267EA7D900DDFD29 /* MovieListViewController.swift in Sources */,
+				B38E769B267FD94700B4E248 /* MovieCollectionViewCell.swift in Sources */,
 				B3EBE353267EA7D900DDFD29 /* AppDelegate.swift in Sources */,
+				B38E769F267FDA2100B4E248 /* UICollectionView+Reusable.swift in Sources */,
 				B3CBF90D267F40A8000A0597 /* MovieListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
